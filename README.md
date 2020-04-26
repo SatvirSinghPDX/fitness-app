@@ -1,5 +1,5 @@
 # fitness-app
-Music Charts Dashboard project made for CS410-FrontendWebDev
+Full stack fitness application project made for CS410-FullStackWebDev
 
 ## Creators
 Alexandra Llamas, Satvir Singh
