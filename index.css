@@ -1,0 +1,27 @@
+html {
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-brand {
+    font-size: 3em;
+}
+
+.navbar-nav {
+    font-size: 1.5em;
+    white-space: nowrap;
+    font-family: Arial, Geneva, Helvetica, sans-serif;
+}
+
+.nav-item {
+    padding-right: 10px;
+}
+
+#dropdown-item {
+    padding-left: 5px;
+    text-decoration: none;
+    color: gray;
+}
