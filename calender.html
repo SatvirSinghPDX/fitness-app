@@ -84,7 +84,7 @@
 
         var authorizeButton = document.getElementById('authorize_button');
         var signoutButton = document.getElementById('signout_button');
-        signoutButton.style.fontSize = "2em";
+        var pre = document.getElementById('content');
 
         /**
          *  On load, called to load the auth2 library and API client library.
@@ -123,11 +123,13 @@
         function updateSigninStatus(isSignedIn) {
             if (isSignedIn) {
                 authorizeButton.style.display = 'none';
-                signoutButton.style.display = 'block';
+                signoutButton.style.display = 'none';
                 listUpcomingEvents();
             } else {
-                authorizeButton.style.display = 'block';
+                authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'none';
+                pre.innerHTML = "";
+
             }
         }
 
