@@ -18,7 +18,7 @@
 
 <body class="bg-dark">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#" style="color: gray; font-size: 3em; font-weight: bold;">GET FIT</a>
+    <a class="navbar-brand" href="index.html" style="color: gray; font-size: 3em; font-weight: bold;">GET FIT</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -36,24 +36,27 @@
           <a class="nav-link" href="#">Healthy Meals</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My Fitness Plan</a>
+          <a class="nav-link" href="calender.html">My Fitness Plan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Track My Progress</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#" id="Username"></a>
+        </li> -->
+        <li>
+          <form class="form-inline my-2 my-lg-0" id="signInFields">
+            <!-- <img class="rounded-circle" id="imageField"> -->
+            <div id="my-signin2"></div>
+            <!-- <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" style="font-size: 1.5em; white-space: nowrap;" onclick="signOut();">Log Out</button> -->
+          </form>
+        </li>
+        <li>
+          <button type="button" class="btn btn-primary" id="signInFields" href="#" onclick="signOut();">Sign out</button>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0" id="signInFields">
-        <!-- <img class="rounded-circle" id="imageField"> -->
-        <div id="my-signin2"></div>
-        <a href="#" onclick="signOut();">Sign out</a>
-        <!-- <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" style="font-size: 1.5em; white-space: nowrap;" onclick="signOut();">Log Out</button> -->
-      </form>
     </div>
   </nav>
-  <br>
   <script src="index.js"></script>
 </body>
 
