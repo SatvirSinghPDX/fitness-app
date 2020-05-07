@@ -36,8 +36,8 @@ function signOut() {
     auth2.signOut().then(function () {
         console.log('User signed out.');
         document.getElementById("welcome").innerHTML = 'Welcome';
-       /*  document.getElementById("Username").innerHTML = 'User signed out';
-        document.getElementById("Username").style.color = "red"; */
+        /*  document.getElementById("Username").innerHTML = 'User signed out';
+         document.getElementById("Username").style.color = "red"; */
     });
 }
 fetch(CategoryUrl)
