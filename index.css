@@ -1,9 +1,9 @@
 body {
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("background.jpg") no-repeat center center fixed;
+    /*   background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .navbar-brand {
@@ -36,20 +36,12 @@ body {
     height: 50px;
 }
 
-.calendarHeader {
-    text-align: center;
-    font-size: 4.5em;
-    font-weight: bold;
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
 button {
     height: 50px;
 }
 
 #content {
-    /* color: white; */
+    color: white;
     font-size: 1.5em;
     /* text-align: center; */
 }
@@ -59,8 +51,30 @@ button {
     text-shadow: -1px 0 black, 0 3px black, 3px 0 black, 0 -1px black;
     margin-left: 5%;
     margin-top: 15%;
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+}
+
+.calendarHeader {
+    text-align: center;
+    font-size: 5em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(28, 179, 206), 0 0 15px rgb(28, 179, 206), 0 0 5px rgb(28, 179, 206);
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+}
+
+#displayWorkouts, #addEventDiv {
+    background-color: rgb(28, 179, 206);
+}
+
+#addButton {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+#eventName {
+    margin-right: 15px;
+}
+
+#welcome {
+    text-shadow: 1px 1px 2px rgb(28, 179, 206), 0 0 15px rgb(28, 179, 206), 0 0 5px rgb(28, 179, 206);
 }

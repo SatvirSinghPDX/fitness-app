@@ -70,13 +70,13 @@
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none; margin: 0 auto;">Authorize</button>
     <button id="signout_button" style="display: none; margin: 0 auto;">Sign Out</button>
-    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: fit-content; margin: 0 auto; opacity: 90%;">
+    <div class="shadow-lg p-3 mb-5 rounded" id="displayWorkouts" style="width: fit-content; margin: 0 auto; opacity: 100%;">
         <pre id="content" style="white-space: pre-wrap;"></pre>
     </div>
-    <div class="shadow-lg p-3 mb-5 bg-white rounded" id="addEventDiv" style="width: fit-content; margin: 0 auto;">
-        <button class="btn btn-warning" id="addButton" onclick="addEvent()">Add Workout</button>
-        <input type="text" id="eventName" placeholder="Workout Name">
-        <input type="text" name="birthday" id="datePicker" placeholder="Event Date">
+    <div class="shadow-lg p-3 mb-5 rounded" id="addEventDiv" style="width: fit-content; margin: 0 auto;">
+        <button class="btn btn-info" id="addButton" onclick="addEvent()">Add Workout</button>
+        <input type="text" id="eventName" placeholder="Workout Name" style="height: 35px;">
+        <input type="text" name="birthday" id="datePicker" placeholder="Event Date" style="height: 35px;">
         <p id="datePicker2" style="display: none;"></p>
     </div>
     <script>
@@ -149,12 +149,13 @@
             if (isSignedIn) {
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'none';
+                pre.innerHTML = "";
                 listUpcomingEvents();
                 document.getElementById("addEventDiv").style.display = 'block';
             } else {
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'none';
-                pre.innerHTML = "";
+                pre.innerHTML = "Please log in to see your workouts!";
                 document.getElementById("addEventDiv").style.display = 'none';
 
             }
