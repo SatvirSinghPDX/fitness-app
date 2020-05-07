@@ -71,12 +71,12 @@
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none; margin: 0 auto;">Authorize</button>
     <button id="signout_button" style="display: none; margin: 0 auto;">Sign Out</button>
-    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="opacity: 50%;">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: fit-content; margin: 0 auto; opacity: 70%;">
         <pre id="content" style="white-space: pre-wrap;"></pre>
     </div>
     <button id="addButton" onclick="addEvent()">Add Event</button>
-    <input type="text" id="eventName">
-    <input type="text" name="birthday" id="datePicker">
+    <input type="text" id="eventName" placeholder="Event summary">
+    <input type="text" name="birthday" id="datePicker" placeholder="Event Date">
 
     <script>
     $(function () {
@@ -196,7 +196,7 @@
                 'orderBy': 'startTime'
             }).then(function (response) {
                 var events = response.result.items;
-                appendPre('Upcoming events:');
+                appendPre('Here are your workouts:');
 
                 if (events.length > 0) {
                     for (i = 0; i < events.length; i++) {

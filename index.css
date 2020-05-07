@@ -38,7 +38,7 @@ body {
 
 .calendarHeader {
     text-align: center;
-    font-size: 4em;
+    font-size: 4.5em;
     font-weight: bold;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -51,6 +51,7 @@ button {
 #content {
     /* color: white; */
     font-size: 1.5em;
+    /* text-align: center; */
 }
 
 .display-2 {
