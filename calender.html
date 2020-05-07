@@ -199,25 +199,23 @@
         // Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
         // stored credentials.
         function addEvent() {
+            var summary = prompt("Please enter the name of the event:")
             var event = {
-                'summary': 'Google I/O 2015',
+                'summary': summary,
                 'location': '800 Howard St., San Francisco, CA 94103',
                 'description': 'A chance to hear more about Google\'s developer products.',
                 'start': {
-                    'dateTime': '2020-05-28T09:00:00-07:00',
+                    'dateTime': '2020-05-07T09:00:00-07:00',
                     'timeZone': 'America/Los_Angeles'
                 },
                 'end': {
-                    'dateTime': '2020-05-29T17:00:00-07:00',
+                    'dateTime': '2020-05-08T17:00:00-07:00',
                     'timeZone': 'America/Los_Angeles'
                 },
                 'recurrence': [
                     'RRULE:FREQ=DAILY;COUNT=1'
                 ],
-                'attendees': [
-                    { 'email': 'lpage@example.com' },
-                    { 'email': 'sbrin@example.com' }
-                ],
+                'attendees': [],
                 'reminders': {
                     'useDefault': false,
                     'overrides': [
