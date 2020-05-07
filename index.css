@@ -1,9 +1,9 @@
 body {
-    /*   background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("background.jpg") no-repeat center center fixed;
+      background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("white.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; */
+    background-size: cover;
 }
 
 .navbar-brand {
@@ -54,6 +54,7 @@ button {
 }
 
 .calendarHeader {
+    letter-spacing: 2px;
     text-align: center;
     font-size: 5em;
     font-weight: bold;
@@ -69,6 +70,7 @@ button {
 #addButton {
     margin-right: 15px;
     font-weight: bold;
+    color: white;
 }
 
 #eventName {
