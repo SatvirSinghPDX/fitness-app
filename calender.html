@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
-<body class="bg-dark">
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html" style="color: gray; font-size: 3em; font-weight: bold;">GET FIT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -71,11 +71,11 @@
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none; margin: 0 auto;">Authorize</button>
     <button id="signout_button" style="display: none; margin: 0 auto;">Sign Out</button>
-    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: fit-content; margin: 0 auto; opacity: 70%;">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: fit-content; margin: 0 auto; opacity: 90%;">
         <pre id="content" style="white-space: pre-wrap;"></pre>
     </div>
-    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: fit-content; margin: 0 auto;">
-        <button class="btn btn-warning" id="addButton" onclick="addEvent()">Add Event</button>
+    <div class="shadow-lg p-3 mb-5 bg-white rounded" id="addEventDiv" style="width: fit-content; margin: 0 auto;">
+        <button class="btn btn-warning" id="addButton" onclick="addEvent()">Add Workout</button>
         <input type="text" id="eventName" placeholder="Workout Name">
         <input type="text" name="birthday" id="datePicker" placeholder="Event Date">
         <p id="datePicker2" style="display: none;"></p>
@@ -91,9 +91,7 @@
         }, function (start, end, label) {
             console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
             var date = start.format('YYYY-MM-DD');
-            console.log(date);
             document.getElementById("datePicker2").innerHTML = date;
-            console.log(document.getElementById("datePicker2").innerHTML);
         });
     </script>
 
@@ -153,10 +151,12 @@
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'none';
                 listUpcomingEvents();
+                document.getElementById("addEventDiv").style.display = 'block';
             } else {
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'none';
                 pre.innerHTML = "";
+                document.getElementById("addEventDiv").style.display = 'none';
 
             }
         }
@@ -211,7 +211,7 @@
                         if (!when) {
                             when = event.start.date;
                         }
-                        appendPre(event.summary + ' (' + when + ')')
+                        appendPre(i+1 + '. ' + event.summary + ' (' + when + ')')
                     }
                 } else {
                     appendPre('No upcoming events found.');
@@ -226,7 +226,6 @@
         function addEvent() {
             var summary = document.getElementById("eventName").value;
             var date = document.getElementById("datePicker2").innerHTML;
-            console.log(date);
             var event = {
                 'summary': summary,
                 'location': '',
