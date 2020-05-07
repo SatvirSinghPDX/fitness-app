@@ -74,21 +74,27 @@
     <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: fit-content; margin: 0 auto; opacity: 70%;">
         <pre id="content" style="white-space: pre-wrap;"></pre>
     </div>
-    <button id="addButton" onclick="addEvent()">Add Event</button>
-    <input type="text" id="eventName" placeholder="Event summary">
-    <input type="text" name="birthday" id="datePicker" placeholder="Event Date">
-
+    <div class="shadow-lg p-3 mb-5 bg-white rounded" style="width: fit-content; margin: 0 auto;">
+        <button class="btn btn-warning" id="addButton" onclick="addEvent()">Add Event</button>
+        <input type="text" id="eventName" placeholder="Workout Name">
+        <input type="text" name="birthday" id="datePicker" placeholder="Event Date">
+        <p id="datePicker2" style="display: none;"></p>
+    </div>
     <script>
-    $(function () {
-                $('input[name="birthday"]').daterangepicker({
-                    singleDatePicker: true,
-                    showDropdowns: true,
-                    minYear: 1901,
-                    maxYear: parseInt(moment().format('YYYY'), 10)
-                }, function (start, end, label) {
-                    var years = moment().diff(start, 'years');
-                });
-            });
+        $('input[name="birthday"]').daterangepicker({
+            "singleDatePicker": true,
+            "showDropdowns": true,
+            "minYear": 2020,
+            "maxYear": 2021,
+            "startDate": "05/07/2020",
+            "endDate": "05/08/2020"
+        }, function (start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+            var date = start.format('YYYY-MM-DD');
+            console.log(date);
+            document.getElementById("datePicker2").innerHTML = date;
+            console.log(document.getElementById("datePicker2").innerHTML);
+        });
     </script>
 
     <script type="text/javascript">
@@ -219,17 +225,18 @@
         // stored credentials.
         function addEvent() {
             var summary = document.getElementById("eventName").value;
-            var date = document.getElementById("datePicker").value;
+            var date = document.getElementById("datePicker2").innerHTML;
+            console.log(date);
             var event = {
                 'summary': summary,
                 'location': '',
                 'description': '',
                 'start': {
-                    'dateTime': '2020-05-07T09:00:00-07:00',
+                    'date': date,
                     'timeZone': 'America/Los_Angeles'
                 },
                 'end': {
-                    'dateTime': '2020-05-08T17:00:00-07:00',
+                    'date': date,
                     'timeZone': 'America/Los_Angeles'
                 },
                 'recurrence': [
