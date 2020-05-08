@@ -35,7 +35,7 @@ function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
         console.log('User signed out.');
-        document.getElementById("welcome").innerHTML = 'Welcome!';
+        document.getElementById("welcome").innerHTML = 'Welcome';
         /*  document.getElementById("Username").innerHTML = 'User signed out';
          document.getElementById("Username").style.color = "red"; */
     });
