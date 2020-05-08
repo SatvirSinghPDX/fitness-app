@@ -82,14 +82,28 @@ button {
 }
 
 #foodCardDiv {
-
+    overflow: auto;
+    white-space: nowrap;
+    text-align: center;
+    width: fit-content;
+    margin-top: 10%;
 }
 
+/* div.cards {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.cards div {
+    display: inline-block;
+}
+ */
 #foodCards {
     background-color: rgb(28, 179, 206);
     color: white;
     font-size: 1.2em;
-    margin-left: 5%;
-    margin-top: 10%;
-    white-space: nowrap;
+    /* margin-left: 5%; */
+    width: 18rem; 
+    float: left; 
+    margin-left: 20px;
 }
