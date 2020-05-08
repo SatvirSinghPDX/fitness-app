@@ -8,7 +8,8 @@ fetch(url)
                 return;
             }
             response.json().then(function (data) {
-                for (i = 0; i < 1; i++) {
+                for (i = 0; i < 4; i++) {
+                    document.getElementById("foodCardDiv").innerHTML += "<div id='foodCards' class='card'><img class='card-img-top' src='Foodplate.jpg' alt='Card image cap'><div class='card-body'><p id='foodName' class='card-text'>Food name and description.</p></div></div>";
                     document.getElementById("foodName").innerHTML = data.text;
                     document.getElementById("foodName").style.textTransform = "uppercase";
                     console.log("<a id='dropdown-item' href='#'>" + data.text + "</a>" + "<br />");
