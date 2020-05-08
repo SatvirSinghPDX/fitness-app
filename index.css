@@ -80,3 +80,16 @@ button {
 #welcome {
     text-shadow: 1px 1px 2px rgb(28, 179, 206), 0 0 15px rgb(28, 179, 206), 0 0 5px rgb(28, 179, 206);
 }
+
+#foodCardDiv {
+
+}
+
+#foodCards {
+    background-color: rgb(28, 179, 206);
+    color: white;
+    font-size: 1.2em;
+    margin-left: 5%;
+    margin-top: 10%;
+    white-space: nowrap;
+}
