@@ -1,4 +1,4 @@
-const url = 'https://api.spoonacular.com/recipes/random?number=20&tags=vegetarian&apiKey=ed5d36b12a2448308cb411d99ccc2a06';
+//const url = 'https://api.spoonacular.com/recipes/random?number=20&tags=vegetarian&apiKey=ed5d36b12a2448308cb411d99ccc2a06';
 
 fetch(url)
     .then(
