@@ -12,8 +12,9 @@ fetch(url)
                     console.log(data.recipes[i].title);
                     console.log(data.recipes[i].image);
                     console.log(data.recipes[i].healthScore);
-                    document.getElementById("foodCardDiv").innerHTML += "<div id='foodCards' class='card'><img  data-toggle='modal' data-target='#exampleModalCenter' id='foodCardImg' class='card-img-top' src='" + data.recipes[i].image + "' alt='Card image cap'><div class='card-body'><a id='foodName' class='card-text' href='" + data.recipes[i].spoonacularSourceUrl + "'>" + data.recipes[i].title + "</a></div></div>";
-                    document.getElementById("popupBody").innerHTML = "Health Score: " + data.recipes[i].healthScore + "<br /> Dairy Free: " + data.recipes[i].dairyFree + "<br /> Gluten Free: " + data.recipes[i].glutenFree + "<br /> Vegan: " + data.recipes[i].vegan + "<br /> Low Fodmap: " + data.recipes[i].lowFodmap;
+                    document.getElementById("foodCardDiv").innerHTML += "<div id='foodCards' class='card'><img  data-toggle='modal' data-target='#exampleModalCenter" + i + "' id='foodCardImg' class='card-img-top' src='" + data.recipes[i].image + "' alt='Card image cap'><div class='card-body'><a id='foodName' class='card-text' href='" + data.recipes[i].spoonacularSourceUrl + "'>" + data.recipes[i].title + "</a></div></div>";
+                    document.getElementById("popupBox").innerHTML += "<div class='modal fade' id='exampleModalCenter" + i + "' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'> </div>";
+                    document.getElementById("exampleModalCenter" + i).innerHTML = "<div class='modal-dialog modal-dialog-centered' role='document'> <div class='modal-content'> <div class='modal-header'> <h5 class='modal-title' id='exampleModalLongTitle'>" + data.recipes[i].title + "</h5> <button type='button' class='close' data-dismiss='modal' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div> <div class='modal-body' id='popupBody'>" + "Health Score: " + data.recipes[i].healthScore + "<br /> Dairy Free: " + data.recipes[i].dairyFree + "<br /> Gluten Free: " + data.recipes[i].glutenFree + "<br /> Vegan: " + data.recipes[i].vegan + "<br /> Low Fodmap: " + data.recipes[i].lowFodmap + "</div> </div> </div>";
                 }
             });
         }
