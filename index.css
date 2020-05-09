@@ -103,3 +103,11 @@ button {
     text-decoration: none;
     color: white;
 }
+
+#popupBody {
+    font-size: 1.5em;
+}
+
+#exampleModalLongTitle {
+    /* font-weight: bolder; */
+}
