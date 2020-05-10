@@ -14,8 +14,8 @@
  }
 
  #mapContainer {
-     height: 60%;
-     width: 60%;
+     height: 50%;
+     width: 50%;
      margin: 0 auto;
      border: 15px solid rgb(28, 179, 206);
      box-shadow: 5px 10px 18px #888888;
