@@ -62,14 +62,26 @@
         </div>
     </nav>
     <br>
-    <p class="calendarHeader">My Fitness Plan</p>
+    <div id="headers">
+        <p class="calendarHeader">My Fitness Plan</p>
+        <!-- <p id="nameField">Hello Hello</p>
+        <img class="rounded-circle" id="profilePic" src=""> -->
+    </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none; margin: 0 auto;">Authorize</button>
     <button id="signout_button" style="display: none; margin: 0 auto;">Sign Out</button>
-    <div class="shadow-lg p-3 mb-5 rounded" id="displayWorkouts"
-        style="width: fit-content; margin: 0 auto; opacity: 100%;">
-        <pre id="content" style="white-space: pre-wrap;"></pre>
+    <div style="text-align: center;">
+        <div id="contentDiv">
+            <div class="shadow-lg p-3 mb-5 rounded" id="displayWorkouts"
+                style="width: fit-content; margin: 0 auto; opacity: 100%;">
+                <pre id="content" style="white-space: pre-wrap;"></pre>
+            </div>
+            <div class="shadow-lg p-3 mb-5 rounded" id="displayDates"
+                style="width: fit-content; margin: 0 auto; opacity: 100%;">
+                <pre id="content2" style="white-space: pre-wrap;"></pre>
+            </div>
+        </div>
     </div>
     <div class="shadow-lg p-3 mb-5 rounded" id="addEventDiv" style="width: fit-content; margin: 0 auto;">
         <button class="btn btn-primary" id="addButton" onclick="addEvent()">Add Workout</button>
@@ -108,6 +120,7 @@
         var authorizeButton = document.getElementById('authorize_button');
         var signoutButton = document.getElementById('signout_button');
         var pre = document.getElementById('content');
+        var pre2 = document.getElementById('content2');
 
         /**
          *  On load, called to load the auth2 library and API client library.
@@ -148,14 +161,15 @@
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'none';
                 pre.innerHTML = "";
+                pre2.innerHTML = "";
                 listUpcomingEvents();
                 document.getElementById("addEventDiv").style.display = 'block';
             } else {
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'none';
                 pre.innerHTML = "Please log in to see your workouts!";
+                pre2.innerHTML = ":)";
                 document.getElementById("addEventDiv").style.display = 'none';
-
             }
         }
 
@@ -185,6 +199,12 @@
             pre.appendChild(textContent);
         }
 
+        function appendPre2(message) {
+            var pre = document.getElementById('content2');
+            var textContent = document.createTextNode(message + '\n');
+            pre.appendChild(textContent);
+        }
+
         /**
          * Print the summary and start datetime/date of the next ten events in
          * the authorized user's calendar. If no events are found an
@@ -201,7 +221,7 @@
             }).then(function (response) {
                 var events = response.result.items;
                 appendPre('Here are your workouts:');
-
+                appendPre2('Dates:')
                 if (events.length > 0) {
                     for (i = 0; i < events.length; i++) {
                         var event = events[i];
@@ -209,7 +229,9 @@
                         if (!when) {
                             when = event.start.date;
                         }
-                        appendPre(i + 1 + '. ' + event.summary + ' (' + when + ')')
+                        when = when.substring(0, 10);
+                        appendPre(i + 1 + '. ' + event.summary);
+                        appendPre2(when);
                     }
                 } else {
                     appendPre('No upcoming events found.');

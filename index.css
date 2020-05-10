@@ -40,7 +40,28 @@ button {
     height: 50px;
 }
 
+#contentDiv {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#displayWorkouts {
+    display: inline-block;
+    text-align: left;
+}
+
+#displayDates {
+    display: inline-block;
+    text-align: left;
+}
+
 #content {
+    color: white;
+    font-size: 1.5em;
+    /* text-align: center; */
+}
+
+#content2 {
     color: white;
     font-size: 1.5em;
     /* text-align: center; */
@@ -54,6 +75,7 @@ button {
 }
 
 .calendarHeader {
+    float: center;
     letter-spacing: 2px;
     text-align: center;
     font-size: 5em;
@@ -63,7 +85,7 @@ button {
     /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
-#displayWorkouts, #addEventDiv {
+#displayWorkouts, #addEventDiv, #displayDates {
     background-color: rgb(28, 179, 206);
 }
 
@@ -106,4 +128,9 @@ button {
 
 #popupBody {
     font-size: 1.5em;
+}
+
+#nameField {
+    float: right;
+    margin-right: 2%;
 }

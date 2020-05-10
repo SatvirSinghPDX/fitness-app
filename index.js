@@ -6,7 +6,9 @@ const proxyurl = "https://cors-anywhere.herokuapp.com/";
 function onSuccess(googleUser) {
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
     document.getElementById("welcome").innerHTML += ", " + googleUser.getBasicProfile().getName() + '!';
-    /* document.getElementById("imageField").src = googleUser.getBasicProfile().getImageUrl(); */
+    console.log(document.getElementById("nameField").innerHTML);
+    document.getElementById("nameField").innerHTML = googleUser.getBasicProfile().getName();
+    document.getElementById("profilePic").src = googleUser.getBasicProfile().getImageUrl();
     /* document.getElementById("Username").innerHTML = googleUser.getBasicProfile().getName();
     document.getElementById("Username").style.color = "red"; */
 }
