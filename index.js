@@ -51,7 +51,7 @@ fetch(CategoryUrl)
             }
             response.json().then(function (data) {
                 for (i = 0; i < 7; i++) {
-                    document.getElementById("category-menu").innerHTML += "<a id='dropdown-item' href='#'>" + data.results[i].name + "</a>" + "<br />";
+                    document.getElementById("category-menu").innerHTML += "<a id='dropdown-item' href='" + data.results[i].name + ".html'>" + data.results[i].name + "</a>" + "<br />";
                 }
             });
         }
