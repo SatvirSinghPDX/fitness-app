@@ -176,7 +176,6 @@
                                     title: data.results[i].name,
                                     position: data.results[i].geometry.location
                                 });
-
                                 google.maps.event.addListener(marker, 'click', (function (marker, i) {
                                     return function () {
                                         infowindow.setContent('<div id="content">' +
