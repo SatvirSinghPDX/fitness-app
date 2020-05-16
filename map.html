@@ -153,11 +153,6 @@
         async defer></script>
     <script>
         function returnGyms(lat, lng, map) {
-            /* console.log(newLatLang);
-            console.log(newLatLang.lat().toString());
-            console.log(newLatLang.lng().toString()); */
-            /* var lat = 45.426020;
-            var lng = -122.840000; */
             console.log(lat + ', ' + lng);
             var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=15000&types=gym&key=AIzaSyBKv50aqKDTVlLvSCl_ux3idwNMHdyX7xA";
             var markers = [];
