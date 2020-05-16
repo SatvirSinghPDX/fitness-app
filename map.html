@@ -168,12 +168,28 @@
                             for (i = 0; i < data.results.length; i++) {
                                 console.log(data.results[i].name);
                                 console.log(data.results[i].vicinity);
-                                console.log('Lat: ' + data.results[i].geometry.location.lat + '   Long: ' + data.results[i].geometry.location.lng);
-                                markers.push(new google.maps.Marker({
+                                /* console.log('Lat: ' + data.results[i].geometry.location.lat + '   Long: ' + data.results[i].geometry.location.lng); */
+                                var infowindow = new google.maps.InfoWindow();
+                                var marker;
+                                marker = new google.maps.Marker({
                                     map: map,
                                     title: data.results[i].name,
                                     position: data.results[i].geometry.location
-                                }));
+                                });
+
+                                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                                    return function () {
+                                        infowindow.setContent('<div id="content">' +
+                                            '<div id="siteNotice">' +
+                                            '</div>' +
+                                            '<h1 id="firstHeading" class="firstHeading">' + data.results[i].name + '</h1>' +
+                                            '<div id="bodyContent">' +
+                                            '<p>' + data.results[i].vicinity + '.</p>' +
+                                            '</div>' +
+                                            '</div>');
+                                        infowindow.open(map, marker);
+                                    }
+                                })(marker, i));
                             }
                         });
                     }
