@@ -149,6 +149,7 @@ button {
 .navbar.navbar-expand-lg.navbar-light.bg-light a {
     color: rgb(28, 179, 206);
     font-size: 22px;
+    letter-spacing: 1.5px;
 }
 
 #logo.navbar-brand {
