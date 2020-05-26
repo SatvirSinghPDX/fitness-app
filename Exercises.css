@@ -10,6 +10,7 @@
     color: white;
     font-size: 20px;
     flex-wrap: wrap;
+    border: 1px solid rgba(0,0,0,.125);
 }
 
 .equipment-filter input {
