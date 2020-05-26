@@ -15,3 +15,28 @@
 .equipment-filter input {
     margin: 8px 8px 0px 8px;
 }
+
+#exercise-listing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+.exercise-item {
+    background-color: rgb(28, 179, 206);
+    color: white;
+    width: 300px;
+    overflow-wrap: break-word;
+    margin: 10px;
+    /* height: fit-content; */
+}
+
+.exercise-item label {
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    width: 265px;
+    padding-bottom: 8px;
+    font-weight: bold;
+}

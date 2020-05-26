@@ -60,18 +60,14 @@
     <br>
     <p class="calendarHeader">Ab Workouts</p>
         <div id="muscle-group">10</div>
-        <div class="container equipment-filter">
+        <div class="container equipment-filter shadow-lg p-3 mb-5 rounded">
             <div class="equipment">
-                <input type="radio" id="none" name="equipment" value="7" onclick="filterEquipment(this)">
-                <label for="none">None</label><br>
+                <input type="radio" id="all" name="equipment" value="11" onclick="filterEquipment(this)"checked>
+                <label for="all">All</label><br>
             </div>
             <div class="equipment">
-                <input type="radio" id="barbell" name="equipment" value="1" onclick="filterEquipment(this)"checked>
+                <input type="radio" id="barbell" name="equipment" value="1" onclick="filterEquipment(this)">
                 <label for="barbell">Barbell</label><br>
-            </div>
-            <div class="equipment">
-                <input type="radio" id="sz-bar" name="equipment" value="2" onclick="filterEquipment(this)">
-                <label for="sz-bar">SZ-Bar</label><br>
             </div>
             <div class="equipment">
                 <input type="radio" id="dumbbell" name="equipment" value="3" onclick="filterEquipment(this)">
@@ -82,27 +78,19 @@
                 <label for="mat">Mat</label><br>
             </div>
             <div class="equipment">
-                <input type="radio" id="swiss-ball" name="equipment" value="5" onclick="filterEquipment(this)">
-                <label for="swiss-ball">Swiss Ball</label><br>
-            </div>
-            <div class="equipment">
-                <input type="radio" id="pull-up-bar" name="equipment" value="6" onclick="filterEquipment(this)">
-                <label for="pull-up-bar">Pull-up Bar</label><br>
-            </div>
-            <div class="equipment">
                 <input type="radio" id="bench" name="equipment" value="8" onclick="filterEquipment(this)">
                 <label for="bench">Bench</label><br>
-            </div>
-            <div class="equipment">
-                <input type="radio" id="incline-bench" name="equipment" value="9" onclick="filterEquipment(this)">
-                <label for="incline-bench">Incline Bench</label><br>
             </div>
             <div class="equipment">
                 <input type="radio" id="kettlebell" name="equipment" value="10" onclick="filterEquipment(this)">
                 <label for="kettlebell">Kettlebell</label><br>
             </div>
+            <div class="equipment">
+                <input type="radio" id="none" name="equipment" value="7" onclick="filterEquipment(this)">
+                <label for="none">None</label><br>
+            </div>
         </div>
-    <p id="TRYME"></p>
+    <p class="container" id="exercise-listing"></p>
     <script src="index.js"></script>
     <script src="Exercises.js"></script>
 </body>
