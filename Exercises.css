@@ -16,6 +16,10 @@
     margin: 8px 8px 0px 8px;
 }
 
+.equipment label {
+    margin-bottom: 0px;
+}
+
 #exercise-listing {
     display: flex;
     flex-direction: row;
@@ -40,4 +44,5 @@
     width: 265px;
     padding-bottom: 8px;
     font-weight: bold;
+    letter-spacing: 2px;
 }

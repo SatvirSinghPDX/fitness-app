@@ -76,10 +76,10 @@ button {
 
 .calendarHeader {
     float: center;
-    letter-spacing: 2px;
+    letter-spacing: 10px;
     text-align: center;
-    font-size: 5em;
-    font-weight: bold;
+    font-size: 4.5em;
+    /* font-weight: bold; */
     color: white;
     text-shadow: 1px 1px 2px rgb(28, 179, 206), 0 0 15px rgb(28, 179, 206), 0 0 5px rgb(28, 179, 206);
     /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
@@ -101,7 +101,8 @@ button {
 
 #welcome {
     text-shadow: 1px 1px 2px rgb(28, 179, 206), 0 0 15px rgb(28, 179, 206), 0 0 5px rgb(28, 179, 206);
-    font-weight: bold;
+    letter-spacing: 10px;
+    /* font-weight: bold; */
 }
 
 #foodCardDiv {
@@ -137,10 +138,14 @@ button {
 }
 
 .abcRioButtonBlue, .abcRioButtonBlue:hover{
-    background-color: rgb(28, 179, 206);
+    background-color: rgb(28, 179, 206) !important;
 }
 
 #signInFields {
     background-color: rgb(28, 179, 206);
     border-color: rgb(28, 179, 206);
+}
+
+.navbar-light.navbar-nav.nav-link {
+    color: rgb(28, 179, 206);
 }
