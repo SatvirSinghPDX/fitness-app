@@ -146,6 +146,23 @@ button {
     border-color: rgb(28, 179, 206);
 }
 
-.navbar-light.navbar-nav.nav-link {
+.navbar.navbar-expand-lg.navbar-light.bg-light a {
+    color: rgb(28, 179, 206);
+    font-size: 22px;
+}
+
+#logo.navbar-brand {
+    color: rgb(28, 179, 206);
+    font-size: 3em;
+    text-shadow: -1px 0 rgb(28, 179, 206), 0 1px rgb(28, 179, 206), 1px 0 rgb(28, 179, 206), 0 -1px rgb(28, 179, 206);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light  {
+    border-bottom: 2px solid rgb(28, 179, 206);
+}
+
+#dropdown-item {
     color: rgb(28, 179, 206);
 }
