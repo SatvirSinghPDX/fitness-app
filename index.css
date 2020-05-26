@@ -101,6 +101,7 @@ button {
 
 #welcome {
     text-shadow: 1px 1px 2px rgb(28, 179, 206), 0 0 15px rgb(28, 179, 206), 0 0 5px rgb(28, 179, 206);
+    font-weight: bold;
 }
 
 #foodCardDiv {
