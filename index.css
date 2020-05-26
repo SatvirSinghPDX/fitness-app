@@ -135,3 +135,12 @@ button {
     float: right;
     margin-right: 2%;
 }
+
+.abcRioButtonBlue, .abcRioButtonBlue:hover{
+    background-color: rgb(28, 179, 206);
+}
+
+#signInFields {
+    background-color: rgb(28, 179, 206);
+    border-color: rgb(28, 179, 206);
+}

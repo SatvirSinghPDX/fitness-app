@@ -18,7 +18,7 @@ function getExercises() {
         .then(response => response.json())
         .then(data => {
             data.results.forEach(function (obj) { 
-                if (obj.name !== '' && obj.description !== '') {
+                if (obj.name !== '' && obj.description !== '' && obj.description.length > 150) {
                     document.getElementById("exercise-listing").innerHTML += "<div class='exercise-item shadow-lg p-3 mb-5 rounded'>" + "<label>" + obj.name + "</label>" + "<p>" + obj.description + "</p>" + "</div>";
                 }
             }); 
