@@ -16,6 +16,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
 <body onload='getExercises()'>
@@ -68,10 +74,6 @@
             <div class="equipment">
                 <input type="radio" id="barbell" name="equipment" value="1" onclick="filterEquipment(this)">
                 <label for="barbell">Barbell</label><br>
-            </div>
-            <div class="equipment">
-                <input type="radio" id="dumbbell" name="equipment" value="3" onclick="filterEquipment(this)">
-                <label for="dumbbell">Dumbbell</label><br>
             </div>
             <div class="equipment">
                 <input type="radio" id="mat" name="equipment" value="4" onclick="filterEquipment(this)">
