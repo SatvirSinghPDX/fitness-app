@@ -18,6 +18,7 @@ const muscle = document.getElementById('muscle-group').textContent;
 var ExercisesUrl = 'https://wger.de/api/v2/exercise/?language=2&category=' + muscle;
 let equipment = 7;
 var SCOPES = "https://www.googleapis.com/auth/calendar";
+var workouts = []
 
 function filterEquipment(eqp) { 
     document.getElementById("exercise-listing").innerHTML = "";
@@ -35,8 +36,8 @@ function getExercises() {
         .then(response => response.json())
         .then(data => {
             data.results.forEach(function (obj) { 
-                if (obj.name !== '' && obj.description !== '' && obj.description.length > 150 && obj.description.length < 530) {
-
+                if (!workouts.includes(obj.name) && obj.name !== '' && obj.description !== '' && obj.description.length > 150 && obj.description.length < 530) {
+                    workouts.push(obj.name)
                     if (userSignedIn == true) {
                         document.getElementById("exercise-listing").innerHTML += "<div class='exercise-item shadow-lg p-3 mb-5 rounded'>" + 
                         "<label>" + obj.name + "</label>" + "<p>" + obj.description + "</p>" + 
