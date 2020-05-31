@@ -1,4 +1,4 @@
-# fitness-app
+# Get Fit
 Full stack fitness application project made for CS410-FullStackWebDev
 
 ## Creators
