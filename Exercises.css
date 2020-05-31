@@ -26,7 +26,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* align-items: center; */
 }
 
 .exercise-item {
@@ -39,7 +38,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* height: fit-content; */
 }
 
 .exercise-item label {
@@ -51,14 +49,8 @@
     letter-spacing: 2px;
 }
 
-#addExercise {}
-
 .add-exercise-input {
     height: 50px; 
     width: 140px; 
     vertical-align: middle;
-}
-
-.addWkout {
-    /* visibility: hidden; */
 }
