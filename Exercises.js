@@ -1,8 +1,23 @@
+// Client ID and API key from the Developer Console
+/* var CLIENT_ID = '404590272565-d84tulqi057jpvhi9i0nmu052al10v1h.apps.googleusercontent.com'; */
+var CLIENT_ID = '354153906034-113gfrsbs38e5kc165fj87abvl7kg2jj.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyBKv50aqKDTVlLvSCl_ux3idwNMHdyX7xA';
+
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/calendar";
+
+var authorizeButton = document.getElementById('authorize_button');
+var signoutButton = document.getElementById('signout_button');
+var userSignedIn = false;
+
 const muscle = document.getElementById('muscle-group').textContent;
 var ExercisesUrl = 'https://wger.de/api/v2/exercise/?language=2&category=' + muscle;
 let equipment = 7;
 var SCOPES = "https://www.googleapis.com/auth/calendar";
-// var calendar  = "https://apis.google.com/js/api.js";
 
 function filterEquipment(eqp) { 
     document.getElementById("exercise-listing").innerHTML = "";
@@ -52,13 +67,6 @@ function getExercises() {
                             "endDate": "05/08/2020"
                         });
                     }
-                   
-                    
-
-
-
-
-
                 }
             }); 
             if(data.next !== null) {
@@ -68,33 +76,12 @@ function getExercises() {
             else {
                 ExercisesUrl = 'https://wger.de/api/v2/exercise/?language=2&category=' + muscle;
             }
-            
         })
         .catch(error => {
             console.log(error);
         });
-
-        
-
 };
 
-
-
-// Client ID and API key from the Developer Console
-/* var CLIENT_ID = '404590272565-d84tulqi057jpvhi9i0nmu052al10v1h.apps.googleusercontent.com'; */
-var CLIENT_ID = '354153906034-113gfrsbs38e5kc165fj87abvl7kg2jj.apps.googleusercontent.com';
-var API_KEY = 'AIzaSyBKv50aqKDTVlLvSCl_ux3idwNMHdyX7xA';
-
-// Array of API discovery doc URLs for APIs used by the quickstart
-var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-
-// Authorization scopes required by the API; multiple scopes can be
-// included, separated by spaces.
-var SCOPES = "https://www.googleapis.com/auth/calendar";
-
-var authorizeButton = document.getElementById('authorize_button');
-var signoutButton = document.getElementById('signout_button');
-var userSignedIn = false;
 
 /**
  *  On load, called to load the auth2 library and API client library.
@@ -131,15 +118,13 @@ function initClient() {
  */
 function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
-        // authorizeButton.style.display = 'none';
-        // signoutButton.style.display = 'none';
-        // listUpcomingEvents();
-        // document.getElementById("addEventDiv").style.display = 'block';
+        authorizeButton.style.display = 'none';
+        signoutButton.style.display = 'none';
         userSignedIn = true;
+        // document.getElementsByClassName("addWkout").style.visibility = 'visible';
     } else {
-        // authorizeButton.style.display = 'none';
-        // signoutButton.style.display = 'none';
-        // document.getElementById("addEventDiv").style.display = 'none';
+        authorizeButton.style.display = 'none';
+        signoutButton.style.display = 'none';
         userSignedIn = false;
         // document.getElementsByClassName("addWkout").style.visibility = 'hidden';
     }
@@ -158,9 +143,6 @@ function handleAuthClick(event) {
 function handleSignoutClick(event) {
     gapi.auth2.getAuthInstance().signOut();
 }
-
-
-
 
 function addEvent(name) {
     var summary = name.id;
