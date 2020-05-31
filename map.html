@@ -45,9 +45,7 @@
                 </li>
                 <li class="nav-item">
                     <form class="form-inline my-2 my-lg-0" id="signInFields">
-                        <!-- <img class="rounded-circle" id="imageField"> -->
                         <div id="my-signin2"></div>
-                        <!-- <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" style="font-size: 1.5em; white-space: nowrap;" onclick="signOut();">Log Out</button> -->
                     </form>
                 </li>
                 <li class="nav-item">
@@ -60,7 +58,6 @@
     <br>
     <script src="index.js"></script>
     <p class="calendarHeader">Find a Gym Near Me</p>
-    <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
     <div id="mapContainer">
         <div id="map"></div>
     </div>
@@ -70,13 +67,6 @@
         <!-- <button type="submit" class="btn btn-primary" id="searchButton">Search</button> -->
     </div>
     <script>
-        // This example adds a search box to a map, using the Google Place Autocomplete
-        // feature. People can enter geographical searches. The search box will return a
-        // pick list containing a mix of places and predicted search terms.
-
-        // This example requires the Places library. Include the libraries=places
-        // parameter when you first load the API. For example:
-        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
         var newLatLang;
         function initAutocomplete() {
             var map = new google.maps.Map(document.getElementById('map'), {

@@ -48,10 +48,8 @@
                     <a class="nav-link" href="map.html">Find a Gym Near Me</a>
                 </li>
                 <li class="nav-item">
-                    <form class="form-inline my-2 my-lg-0" id="signInFields">
-                        <!-- <img class="rounded-circle" id="imageField"> -->
+                    <form class="form-inline my-2 my-lg-0" id="signInFields"> 
                         <div id="my-signin2"></div>
-                        <!-- <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" style="font-size: 1.5em; white-space: nowrap;" onclick="signOut();">Log Out</button> -->
                     </form>
                 </li>
                 <li class="nav-item">
@@ -64,8 +62,6 @@
     <br>
     <div id="headers">
         <p class="calendarHeader">My Fitness Plan</p>
-        <!-- <p id="nameField">Hello Hello</p>
-        <img class="rounded-circle" id="profilePic" src=""> -->
     </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
@@ -106,7 +102,6 @@
 
     <script type="text/javascript">
         // Client ID and API key from the Developer Console
-        /* var CLIENT_ID = '404590272565-d84tulqi057jpvhi9i0nmu052al10v1h.apps.googleusercontent.com'; */
         var CLIENT_ID = '354153906034-113gfrsbs38e5kc165fj87abvl7kg2jj.apps.googleusercontent.com';
         var API_KEY = 'AIzaSyBKv50aqKDTVlLvSCl_ux3idwNMHdyX7xA';
 
@@ -240,10 +235,6 @@
             });
         }
 
-        // Refer to the JavaScript quickstart on how to setup the environment:
-        // https://developers.google.com/calendar/quickstart/js
-        // Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
-        // stored credentials.
         function addEvent() {
             var summary = document.getElementById("eventName").value;
             var date = document.getElementById("datePicker2").innerHTML;
