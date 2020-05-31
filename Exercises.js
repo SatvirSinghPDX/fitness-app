@@ -21,29 +21,44 @@ function getExercises() {
         .then(data => {
             data.results.forEach(function (obj) { 
                 if (obj.name !== '' && obj.description !== '' && obj.description.length > 150 && obj.description.length < 530) {
-                    document.getElementById("exercise-listing").innerHTML += "<div class='exercise-item shadow-lg p-3 mb-5 rounded'>" + 
-                    "<label>" + obj.name + "</label>" + "<p>" + obj.description + "</p>" + 
-                    '<div class="addWkout"><input id="'+obj.name+'1" type="text" class="add-exercise-input rounded mr-2" name="birthday" placeholder="Event Date">' + 
-                    '<button class="btn btn-primary" id="'+obj.name+'" onclick="addEvent(this);">Add workout</button>' +
-                    '<p style="display: none;"></p></div></div>';
-                    $('input[name="birthday"]').daterangepicker({
-                        "singleDatePicker": true,
-                        "showDropdowns": true,
-                        "minYear": 2020,
-                        "maxYear": 2021,
-                        "startDate": "05/30/2020",
-                        "endDate": "05/08/2020"
+
+                    if (userSignedIn == true) {
+                        document.getElementById("exercise-listing").innerHTML += "<div class='exercise-item shadow-lg p-3 mb-5 rounded'>" + 
+                        "<label>" + obj.name + "</label>" + "<p>" + obj.description + "</p>" + 
+                        '<div class="addWkout"><input id="'+obj.name+'1" type="text" class="add-exercise-input rounded mr-2" name="birthday" placeholder="Event Date">' + 
+                        '<button class="btn btn-primary" id="'+obj.name+'" onclick="addEvent(this);">Add workout</button>' +
+                        '<p style="display: none;"></p></div></div>';
+                        $('input[name="birthday"]').daterangepicker({
+                            "singleDatePicker": true,
+                            "showDropdowns": true,
+                            "minYear": 2020,
+                            "maxYear": 2021,
+                            "startDate": "05/30/2020",
+                            "endDate": "05/08/2020"
+                        });
                     }
-                    , 
-                    // function (start, end, label) {
-                    //     console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-                    //     var date = start.format('YYYY-MM-DD');
-                    //     var myId = obj.name+'1';
-                    //     document.getElementById(myId).innerHTML = date;
-                        
-                    // }
-                    );
+                    else {
+                        document.getElementById("exercise-listing").innerHTML += "<div class='exercise-item shadow-lg p-3 mb-5 rounded'>" + 
+                        "<label>" + obj.name + "</label>" + "<p>" + obj.description + "</p>" + 
+                        '<div class="addWkout" style="visibility: hidden;"><input id="'+obj.name+'1" type="text" class="add-exercise-input rounded mr-2" name="birthday" placeholder="Event Date">' + 
+                        '<button class="btn btn-primary" id="'+obj.name+'" onclick="addEvent(this);">Add workout</button>' +
+                        '<p style="display: none;"></p></div></div>';
+                        $('input[name="birthday"]').daterangepicker({
+                            "singleDatePicker": true,
+                            "showDropdowns": true,
+                            "minYear": 2020,
+                            "maxYear": 2021,
+                            "startDate": "05/30/2020",
+                            "endDate": "05/08/2020"
+                        });
+                    }
+                   
                     
+
+
+
+
+
                 }
             }); 
             if(data.next !== null) {
@@ -79,6 +94,7 @@ var SCOPES = "https://www.googleapis.com/auth/calendar";
 
 var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
+var userSignedIn = false;
 
 /**
  *  On load, called to load the auth2 library and API client library.
@@ -119,10 +135,13 @@ function updateSigninStatus(isSignedIn) {
         // signoutButton.style.display = 'none';
         // listUpcomingEvents();
         // document.getElementById("addEventDiv").style.display = 'block';
+        userSignedIn = true;
     } else {
         // authorizeButton.style.display = 'none';
         // signoutButton.style.display = 'none';
         // document.getElementById("addEventDiv").style.display = 'none';
+        userSignedIn = false;
+        // document.getElementsByClassName("addWkout").style.visibility = 'hidden';
     }
 }
 
