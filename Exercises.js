@@ -2,6 +2,7 @@ const muscle = document.getElementById('muscle-group').textContent;
 var ExercisesUrl = 'https://wger.de/api/v2/exercise/?language=2&category=' + muscle;
 let equipment = 7;
 var SCOPES = "https://www.googleapis.com/auth/calendar";
+// var calendar  = "https://apis.google.com/js/api.js";
 
 function filterEquipment(eqp) { 
     document.getElementById("exercise-listing").innerHTML = "";
@@ -58,9 +59,97 @@ function getExercises() {
 
 };
 
+
+
+
+
+
+
+// Client ID and API key from the Developer Console
+/* var CLIENT_ID = '404590272565-d84tulqi057jpvhi9i0nmu052al10v1h.apps.googleusercontent.com'; */
+var CLIENT_ID = '354153906034-113gfrsbs38e5kc165fj87abvl7kg2jj.apps.googleusercontent.com';
+var API_KEY = 'AIzaSyBKv50aqKDTVlLvSCl_ux3idwNMHdyX7xA';
+
+// Array of API discovery doc URLs for APIs used by the quickstart
+var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+var SCOPES = "https://www.googleapis.com/auth/calendar";
+
+var authorizeButton = document.getElementById('authorize_button');
+var signoutButton = document.getElementById('signout_button');
+
+/**
+ *  On load, called to load the auth2 library and API client library.
+ */
+function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+}
+
+/**
+ *  Initializes the API client library and sets up sign-in state
+ *  listeners.
+ */
+function initClient() {
+    gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES
+    }).then(function () {
+        // Listen for sign-in state changes.
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+        // Handle the initial sign-in state.
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        authorizeButton.onclick = handleAuthClick;
+        signoutButton.onclick = handleSignoutClick;
+    }, function (error) {
+    });
+}
+
+/**
+ *  Called when the signed in status changes, to update the UI
+ *  appropriately. After a sign-in, the API is called.
+ */
+function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+        // authorizeButton.style.display = 'none';
+        // signoutButton.style.display = 'none';
+        // listUpcomingEvents();
+        // document.getElementById("addEventDiv").style.display = 'block';
+    } else {
+        // authorizeButton.style.display = 'none';
+        // signoutButton.style.display = 'none';
+        // document.getElementById("addEventDiv").style.display = 'none';
+    }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+}
+
+/**
+ *  Sign out the user upon button click.
+ */
+function handleSignoutClick(event) {
+    gapi.auth2.getAuthInstance().signOut();
+}
+
+
+
+
+
+
+
+
 function addEvent(name) {
     var summary = name.id;
-    var date = "2020/06/01"
+    var date = "2020-06-11"
     // var date = document.getElementById("datePicker2").innerHTML;
     var event = {
         'summary': summary,
@@ -94,11 +183,5 @@ function addEvent(name) {
 
     request.execute(function (event) {
         alert("workout added");
-        // appendPre('Event created: ' + event.summary);
-        // appendPre2('Date: ' + event.start.date)
     });
 }
-
-
-
-
