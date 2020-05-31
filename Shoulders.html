@@ -16,6 +16,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
 <body onload='getExercises()'>
@@ -59,6 +66,8 @@
     </nav>
     <br>
     <p class="calendarHeader">Shoulder Workouts</p>
+        <button id="authorize_button" style="display: none; margin: 0 auto;">Authorize</button>
+        <button id="signout_button" style="display: none; margin: 0 auto;">Sign Out</button>
         <div id="muscle-group">13</div>
         <div class="container equipment-filter shadow-lg p-3 mb-5 rounded">
             <div class="equipment">
@@ -89,6 +98,9 @@
     <p class="container" id="exercise-listing"></p>
     <script src="index.js"></script>
     <script src="Exercises.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 
 </html>
