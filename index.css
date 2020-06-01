@@ -144,6 +144,7 @@ button {
 #signInFields {
     background-color: rgb(28, 179, 206);
     border-color: rgb(28, 179, 206);
+    width: fit-content;
 }
 
 .navbar.navbar-expand-lg.navbar-light.bg-light a {
